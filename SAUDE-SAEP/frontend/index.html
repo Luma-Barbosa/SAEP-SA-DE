@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAEP SAÚDE</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="perfil" id="perfil">
+  
+  </aside>
+
+  <main class="main">
+
+    <header class="main-header" id="mainHeader">
+      <button class="btn-header" id="btnLoginLogout">Login</button>
+    </header>
+
+    <nav class="filtros" id="filtros">
+      <button class="filtro" data-tipo="corrida">Corrida</button>
+      <button class="filtro" data-tipo="caminhada">Caminhada</button>
+      <button class="filtro" data-tipo="trilha">Trilha</button>
+    </nav>
+
+    <section class="criar-atividade oculto" id="criarAtividade">
+      <h2>Crie sua atividade</h2>
+      <form id="formAtividade" novalidate>
+        <div class="campos-grid">
+          <div class="campo">
+            <label for="campoTipo">Tipo da atividade</label>
+            <select id="campoTipo" name="tipo">
+              <option value="">Ex: Caminhada</option>
+              <option value="corrida">Corrida</option>
+              <option value="caminhada">Caminhada</option>
+              <option value="trilha">Trilha</option>
+            </select>
+            <span class="erro-campo" data-erro="tipo"></span>
+          </div>
+          <div class="campo">
+            <label for="campoDistancia">Distância percorrida (metros)</label>
+            <input type="number" id="campoDistancia" placeholder="Ex: 1000 metros" min="0">
+            <span class="erro-campo" data-erro="distancia"></span>
+          </div>
+          <div class="campo">
+            <label for="campoDuracao">Duração da atividade (minutos)</label>
+            <input type="number" id="campoDuracao" placeholder="Ex: 120 min" min="0">
+            <span class="erro-campo" data-erro="duracao"></span>
+          </div>
+          <div class="campo">
+            <label for="campoCalorias">Quantidade de Calorias</label>
+            <input type="number" id="campoCalorias" placeholder="Ex: 300" min="0">
+            <span class="erro-campo" data-erro="calorias"></span>
+          </div>
+        </div>
+        <button type="submit" class="btn-criar-atividade">Criar Atividade</button>
+      </form>
+
+      <h3 class="titulo-suas-atividades">Suas Atividades</h3>
+    </section>
+
+    <section class="lista-atividades" id="listaAtividades">
+    </section>
+
+    <nav class="paginacao" id="paginacao"></nav>
+
+  </main>
+</div>
+
+<div class="modal-overlay oculto" id="modalLogin">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Login</h2>
+      <button class="btn-fechar-modal" id="btnFecharModal" aria-label="Fechar">
+        <img src="img/x.svg" alt="Fechar">
+      </button>
+    </div>
+    <form id="formLogin" novalidate>
+      <div class="campo">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" name="email">
+        <span class="erro-campo" data-erro="email"></span>
+      </div>
+      <div class="campo">
+        <label for="loginSenha">Senha</label>
+        <input type="password" id="loginSenha" name="senha">
+        <span class="erro-campo" data-erro="senha"></span>
+      </div>
+      <div class="modal-botoes">
+        <button type="button" class="btn-cancelar" id="btnCancelarLogin">Cancelar</button>
+        <button type="submit" class="btn-login">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast oculto" id="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
